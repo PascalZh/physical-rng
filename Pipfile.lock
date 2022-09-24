@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "1780404d3d56b2c6e8aafad7def63f98f2f412c128c18ccddb4a20397278ea6a"
+            "sha256": "f56793e3fc17a9e6f6e18d0cca992e046178c899f26d361c85c8478d61f5636b"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -591,16 +591,7 @@
             ],
             "index": "pypi",
             "version": "==2.0.1"
-        },
-        "unknown": {
-            "editable": true,
-            "path": "."
         }
     },
-    "develop": {
-        "unknown": {
-            "editable": true,
-            "path": "."
-        }
-    }
+    "develop": {}
 }

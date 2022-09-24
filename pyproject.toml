@@ -19,4 +19,7 @@ classifiers = [
 ]
 
 [project.scripts]
-random_toolbox = "physical_rng.console_scripts.rng_toolbox:main"
+rng_toolbox = "physical_rng.console_scripts.rng_toolbox:main"
+
+[tool.setuptools]
+py-modules = []
