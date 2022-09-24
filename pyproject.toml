@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=61.0", "setuptools-scm"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "physical_rng"
+version = "0.0.1"
+authors = [
+  { name="Zhang Siyan", email="1315521905@qq.com" },
+]
+description = "A lot of simulations and utilities to experiment and design new algorithms for chaos laser based random number generation."
+readme = "README.md"
+license = { file="LICENSE" }
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[project.scripts]
+random_toolbox = "physical_rng.console_scripts.rng_toolbox:main"

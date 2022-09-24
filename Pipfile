@@ -1,0 +1,19 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+bitarray = "*"
+matplotlib = "*"
+numpy = "*"
+pyqt5 = "~=5.15"
+termcolor = "*"
+statsmodels = "*"
+unknown = {editable = true, path = "."}
+
+[dev-packages]
+unknown = {editable = true, path = "."}
+
+[requires]
+python_version = "3.10"
