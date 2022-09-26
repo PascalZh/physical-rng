@@ -3,8 +3,8 @@ import numpy as np
 import matplotlib.pyplot as plt
 from termcolor import colored, cprint
 from numpy.random import default_rng
-from random_algorithms import *
-from utils import *
+from physical_rng.rng_algorithms import *
+from physical_rng.utils import *
 
 
 # 1. 准备数据

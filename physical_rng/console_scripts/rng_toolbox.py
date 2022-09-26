@@ -9,30 +9,13 @@ import functools
 import random
 import statsmodels.api as sm
 from bitarray import bitarray
+from ..utils import NBitSequence
 
 
 class ArgumentParserWithDefaultsHelpFormatter(argparse.ArgumentParser):
     def __init__(self, *args, formatter_class=argparse.ArgumentDefaultsHelpFormatter, **kwargs):
         kwargs['formatter_class'] = formatter_class
         super().__init__(*args, **kwargs)
-
-
-def pack_bits(bits: bytes, bit_width=1, dtype='int', big_endian=True) -> np.ndarray:
-    """Notice: ensure a variable of dtype can contain any integer number of width `bit_width`"""
-    ba = bitarray()
-    ba.frombytes(bits)
-
-    N = len(ba)
-    assert(N % bit_width == 0)
-
-    ret = np.zeros(N // bit_width, dtype=dtype)
-    for i in range(N // bit_width):
-        for j in range(bit_width):
-            if big_endian:
-                ret[i] += ba[i*bit_width+j] << (bit_width - j - 1)
-            else:  # little-endian
-                ret[i] += ba[i*bit_width+j] << j
-    return ret
 
 
 def load_bit_sequence(filename) -> bytes:
@@ -58,7 +41,8 @@ def parse_bit_sequence(seq_bytes, bit_width=8, big_endian=True):
     elif bit_width == 64:
         return np.frombuffer(b, dtype='>u8')
     else:
-        return pack_bits(b, bit_width=bit_width)
+        seq = NBitSequence(b, bit_width=bit_width, big_endian=big_endian)
+        return seq.to_array()
 
 
 def analyze_rng(args):

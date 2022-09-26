@@ -22,4 +22,4 @@ classifiers = [
 rng_toolbox = "physical_rng.console_scripts.rng_toolbox:main"
 
 [tool.setuptools]
-py-modules = []
+packages = ["physical_rng"]

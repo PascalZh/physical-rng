@@ -6,7 +6,7 @@ def identity(x):
     return x
 
 
-def delayed_xor(x, delay=101):
+def delayed_xor(x: np.ndarray, delay=101):
 
     x_bytes = x.tobytes()
     ba = bitarray()

@@ -1,3 +1,5 @@
+"""测试做差对分布的影响
+"""
 import numpy as np
 import matplotlib.pyplot as plt
 from random import randint

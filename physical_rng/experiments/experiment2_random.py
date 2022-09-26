@@ -1,9 +1,11 @@
+"""测试最高位和最低位的互相关
+"""
 import numpy as np
 import matplotlib.pyplot as plt
 from termcolor import colored, cprint
 from numpy.random import default_rng
-from random_algorithms import *
-from random_utils import *
+from physical_rng.rng_algorithms import *
+from physical_rng.utils import *
 
 
 rng = default_rng()
